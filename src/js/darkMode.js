@@ -6,7 +6,7 @@ const darkMode = (e) => {
 
     const body = document.body
 
-        if (boolean) {
+    if (boolean) {
         changeMoonIcon(solidMoonIcon)
         body.classList.add('darkMode')
     } else {
