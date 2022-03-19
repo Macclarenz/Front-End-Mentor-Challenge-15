@@ -6,21 +6,15 @@ const darkMode = (e) => {
 
     const body = document.body
 
-    // localStorage.setItem('isItDarkMode', 'false')
-    if (localStorage.getItem('isItDarkMode') === 'false') {
-        localStorage.setItem('isItDarkMode', 'true')
-        body.classList.toggle('darkMode')
+        if (boolean) {
         changeMoonIcon(solidMoonIcon)
-        return
-    } else if (localStorage.getItem('isItDarkMode') === 'true') {
-        localStorage.setItem('isItDarkMode', 'false')
-        body.classList.toggle('darkMode')
-        changeMoonIcon(regularMoonIcon)
-        return
+        body.classList.add('darkMode')
     } else {
-        return
+        changeMoonIcon(regularMoonIcon)
+        body.classList.remove('darkMode')
     }
-    // console.log(localStorage.getItem('isItDarkMode') === 'false')
+
+    return
 }
 
 const changeMoonIcon = (icon) => {
