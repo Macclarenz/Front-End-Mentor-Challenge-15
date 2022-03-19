@@ -11,9 +11,6 @@ import {
     darkMode
 } from './darkMode.js'
 
-import ScrollReveal from './scrollreveal'
-
-
 const filterCountry = document.querySelector('#filterCountry')
 const formCountry = document.querySelector('#countryForm')
 const searchCountry = document.querySelector('#searchInputText')
