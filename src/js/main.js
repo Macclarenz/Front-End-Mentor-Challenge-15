@@ -72,7 +72,7 @@ searchCountry.addEventListener('input', e => {
 
 // - Request for data when the site is loading
 const load = async () => {
-    darkMode(checkDarkMode()) 
+    darkMode() 
 
     return await getData()
         .then(() => {
