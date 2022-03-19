@@ -16,7 +16,7 @@ const darkMode = (boolean) => {
         boolean = false
     }
 
-    return sessionStorage.setItem('isItDarkMode', ''+boolean+'')
+    return sessionStorage.setItem('isItDarkMode', boolean.toString())
 }
 
 const changeMoonIcon = (icon) => {
