@@ -18,7 +18,7 @@ const darkMode = (e) => {
         changeMoonIcon(regularMoonIcon)
         return
     } else {
-        return localStorage.setItem('isItDarkMode', 'false')
+        return
     }
     // console.log(localStorage.getItem('isItDarkMode') === 'false')
 }
