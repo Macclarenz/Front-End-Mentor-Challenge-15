@@ -74,7 +74,7 @@ searchCountry.addEventListener('input', e => {
 const load = async () => {
     darkMode(checkDarkMode()) 
 
-    return await getData(currBoolean)
+    return await getData()
         .then(() => {
             sr.reveal('.card', {
                 delay: 0,
