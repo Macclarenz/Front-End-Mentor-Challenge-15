@@ -1,0 +1,180 @@
+@use '../abstracts/'as abs;
+
+.detail-container {
+    background-color: abs.$Very-Light-Gray;
+    visibility: hidden;
+    padding: 2.5em 1.5em 4em;
+    opacity: 0;
+    position: fixed;
+    transition: all 900ms cubic-bezier(0, 0, 0.06, 1.16);
+    transform: translateX(100%);
+    transform-origin: right;
+    width: 100%;
+    top: 5em;
+    bottom: 0;
+
+    .detail-wrapper-container {
+        margin: 0 auto;
+        width: min(1440px, 90%);
+
+        #detailBackButton {
+            @include abs.reset(true);
+            @include abs.flex(center, center, row, nowrap, .5em);
+            background-color: abs.$White;
+            box-shadow: abs.$shadow;
+            padding: .5em 1em;
+            margin-block: 0 2em;
+            width: 100px;
+
+            svg {
+                fill: abs.$Dark-Blue;
+                height: 16px;
+                width: 16px;
+            }
+
+            p {
+                font-weight: map-get(abs.$nunitoWeight, semiBold);
+            }
+        }
+
+        .detail-flag-img {
+            display: block;
+            margin-block: 2.5em;
+            margin-inline: auto;
+            object-fit: contain;
+            height: min(240px, 100%);
+            width: min(100%, 400px);
+        }
+
+        .detail-section {
+            @include abs.flex(flex-start, center, row, wrap, 2em);
+
+            #detailName {
+                margin-block: 0 -.5em;
+                width: 100%;
+            }
+
+            .small-detail-container {
+                @include abs.flex(space-between, flex-start, row, wrap, 2em 3em);
+
+                .small-detail {
+                    p {
+                        font-size: 14px;
+                        font-weight: map-get(abs.$nunitoWeight, extraBold);
+                        line-height: 1.8;
+
+                        span {
+                            font-weight: map-get(abs.$nunitoWeight, semiBold);
+                        }
+                    }
+                }
+            }
+        }
+
+        .border-container {
+            margin-block: 2.5em 0;
+
+            h2 {
+                font-size: 18px;
+                margin-block: 0 1em;
+            }
+
+            .border-list {
+                @include abs.flex(flex-start, center, row, wrap, .5em);
+                list-style: none;
+
+                li {
+                    background-color: abs.$White;
+                    box-shadow: abs.$shadow;
+                    color: abs.$Very-Dark-Blue-Text;
+                    font-size: 14px;
+                    font-weight: map-get(abs.$nunitoWeight, semiBold);
+                    padding-block: .5em;
+                    min-width: 120px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    // - FOR FIXED POSITION
+    &.detail-open {
+        visibility: visible;
+        display: block;
+        position: fixed;
+        overflow-y: scroll;
+        opacity: 1;
+        transform: translateX(0);
+        z-index: 10;
+    }
+
+    &::-webkit-scrollbar {
+        appearance: none;
+        display: none;
+    }
+
+    h2,
+    p {
+        color: abs.$Very-Dark-Blue-Text;
+    }
+}
+
+@media (min-width: 765px) {
+    .detail-wrapper-container {
+        .detail-main-container {
+            #detailName {
+                text-align: center;
+            }
+
+            .detail-section {
+                justify-content: center;
+            }
+
+            .border-container {
+                @include abs.flex(space-between, center, row, nowrap, 1em 1.5em);
+                margin-block: 1em 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .detail-wrapper-container {
+        #detailBackButton {
+            margin-block: 2em !important;
+        }
+
+        .detail-main-container {
+            @include abs.flex(space-between, center, row, nowrap, min(8%, 6em));
+
+            .detail-flag-img {
+                height: min(340px, 100vh);
+                width: min(470px, 100vw);
+                margin-right: auto;
+            }
+
+            .detail-section {
+                justify-content: flex-start;
+                max-width: 50%;
+
+                #detailName {
+                    text-align: left;
+                }
+
+                .small-detail-container {
+                    width: 100%;
+
+                }
+            }
+
+            .border-container {
+                @include abs.flex(space-between, flex-start, row, nowrap, 1em 1.5em);
+                margin-block: 1em 0;
+
+                h2 {
+                    min-width: 15ch;
+                }
+            }
+        }
+    }
+}

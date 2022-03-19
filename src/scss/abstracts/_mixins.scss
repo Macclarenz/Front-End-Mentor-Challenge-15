@@ -1,0 +1,28 @@
+@mixin flex($justify, $align, $direction: row, $wrap: wrap, $gap: 0em) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    gap: $gap
+}
+
+@mixin grid($row, $column, $justify, $align, $gap: 0em) {
+    display: grid;
+    grid-template: $row / $column;
+    justify-items: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin reset($button: false) {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    @if $button == true {
+        cursor: pointer;
+    } @else {
+        cursor: auto;
+    }
+}
+

@@ -1,0 +1,34 @@
+@use '../abstracts/' as abs;
+
+body.darkMode {
+    $shadow: hsl(207, 26%, 17%) 0 0 1em;
+    $shadow2: hsla(200, 15%, 8%, 0.514) 0 0 2em;
+    background-color: abs.$Very-Dark-Blue !important;
+
+    // - TEXT (WHITE)
+    h1, h2, p, #filterCountry, li, 
+    svg, #searchInputText, #searchInputText::placeholder{
+        color: abs.$White !important;
+        fill: abs.$White !important;
+    }
+
+    // - DARK BLUE
+    header, #searchInputText, #filterCountry, .card {
+        background-color: abs.$Dark-Blue !important;
+    }
+
+    // - SHADOW
+    header, #searchInputText, #filterCountry, .card {
+        box-shadow: $shadow2 !important;
+    }
+
+    // - DETAIL DARK MODE
+    .detail-container {
+        background-color: abs.$Very-Dark-Blue !important;
+    }
+
+    #detailBackButton, .border-list li {
+        background-color: abs.$Dark-Blue !important;
+        box-shadow: $shadow2 !important;
+    }
+}
