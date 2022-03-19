@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible content="IE="edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script src="./src/js/main.js" type='module'></script>
+</head>
+
+<body class = ''>
+    <header>
+        <div class="header-container">
+            <div class="header-smaller-container">
+                <h1>Where in the world?</h1>
+                <button id='darkModeButton'>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path></path>
+                            d="M421.6 379.9c-.6641 0-1.35 .0625-2.049 .1953c-11.24 2.143-22.37 3.17-33.32 3.17c-94.81 0-174.1-77.14-174.1-175.5c0-63.19 33.79-121.3 88.73-152.6c8.467-4.812 6.339-17.66-3.279-19.44c-11.2-2.078-29.53-3.746-40.9-3.746C132.3 31.1 32 132.2 32 256c0 123.6 100.1 224 223.8 224c69.04 0 132.1-31.45 173.8-82.93C435.3 389.1 429.1 379.9 421.6 379.9zM255.8 432C158.9 432 80 353 80 256c0-76.32 48.77-141.4 116.7-165.8C175.2 125 163.2 165.6 163.2 207.8c0 99.44 65.13 183.9 154.9 212.8C298.5 428.1 277.4 432 255.8 432z" />
+                        </svg>
+                    <p>Dark Mode</p>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <form method="get" id='countryForm' autocomplete="off">
+            <div class="search-container">
+                <button id='searchButton' aria-label="search button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                            d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+                        </svg>
+                </button>
+                <input autocomplete="off" type="text" id="searchInputText" placeholder="Search for a country...">
+            </div>
+            <select id="filterCountry" title="filter region">
+                <option value="all">Filter by Region</option>
+                <option value='africa'>Africa</option>
+                <option value='americas'>America</option>
+                <option value='asia'>Asia</option>
+                <option value='europe'>Europe</option>
+                <option value='oceania'>Oceania</option>
+            </select>
+        </form>
+
+        <div class="card-container">
+            <!-- <div class="card">
+                <img src="https://flagcdn.com/de.svg" alt="flag">
+                <section class="small-detail-container">
+                    <h2>Germany</h2>
+                    <p>Population: <span class="spanPopulation">32,971,846</span></p>
+                    <p>Region: <span class="spanRegion">Americas</span></p>
+                    <p>Capital: <span class="spanCapital">Lima</span></p>
+                </section>
+            </div>
+            <div class="card">
+                <img src="https://flagcdn.com/us.svg" alt="flag">
+                <section class="small-detail-container">
+                    <h2>United States of America</h2>
+                    <p>Population: <span class="spanPopulation">32,971,846</span></p>
+                    <p>Region: <span class="spanRegion">Americas</span></p>
+                    <p>Capital: <span class="spanCapital">Lima</span></p>
+                </section>
+            </div>
+            <div class="card">
+                <img src="https://flagcdn.com/br.svg" alt="flag">
+                <section class="small-detail-container">
+                    <h2>Brazil</h2>
+                    <p>Population: <span class="spanPopulation">32,971,846</span></p>
+                    <p>Region: <span class="spanRegion">Americas</span></p>
+                    <p>Capital: <span class="spanCapital">Lima</span></p>
+                </section>
+            </div>
+            <div class="card">
+                <img src="https://flagcdn.com/is.svg" alt="flag">
+                <section class="small-detail-container">
+                    <h2>Iceland</h2>
+                    <p>Population: <span class="spanPopulation">32,971,846</span></p>
+                    <p>Region: <span class="spanRegion">Americas</span></p>
+                    <p>Capital: <span class="spanCapital">Lima</span></p>
+                </section>
+            </div> -->
+        </div>
+    </main>
+
+    <section class="detail-container"> <!-- - To open add a class 'detail-open' -->
+        <div class="detail-wrapper-container">
+            <button id='detailBackButton' aria-label='Back button'>
+                <svg aria-label="left arrow icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                        d="M9.375 233.4l128-128c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H480c17.69 0 32 14.31 32 32s-14.31 32-32 32H109.3l73.38 73.38c12.5 12.5 12.5 32.75 0 45.25c-12.49 12.49-32.74 12.51-45.25 0l-128-128C-3.125 266.1-3.125 245.9 9.375 233.4z" />
+                    </svg>
+                <p>Back</p>
+            </button>
+            
+            <div class="detail-main-container">
+                <img class='detail-flag-img' src="https://flagcdn.com/be.svg" alt="flag">
+                
+                <section class="detail-section">
+                    <h2 id='detailName'>Belgium</h2>
+                    <div class="small-detail-container">
+                        <div class="small-detail">
+                            <p>Native Name: <span id='detailNativeName'>Belgie</span></p>
+                            <p>Population: <span id='detailPopulation'>11,319,511</span></p>
+                            <p>Region: <span id='detailRegion'>Europe</span></p>
+                            <p>Sub Region: <span id='detailSubRegion'>Western Europe</span></p>
+                            <p>Capital: <span id='detailCapital'>Brussels</span></p>
+                        </div>
+                        <div class="small-detail">
+                            <p>Top Level Domain: <span id='detailTLD'>.be</span></p>
+                            <p>Currencies: <span id="detailCurrencies">Euro</span></p>
+                            <p>Language: <span id="detailLanguages">Dutch, French, German</span></p>
+                        </div>
+                    </div>
+                    <section class="border-container">
+                        <h2>Border Countries:</h2>
+                        <ul class="border-list">
+                            <!-- <li>France</li>
+                            <li>Germany</li>
+                            <li>Netherlands</li> -->
+                        </ul>
+                    </section>
+                </section>
+            </div>
+
+
+        </div>
+    </section>
+</body>
+
+</html>
