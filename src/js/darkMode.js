@@ -9,12 +9,14 @@ const darkMode = (boolean) => {
     if (boolean) {
         changeMoonIcon(solidMoonIcon)
         body.classList.add('darkMode')
-    } else {
+    } else if (boolean === false) {
         changeMoonIcon(regularMoonIcon)
         body.classList.remove('darkMode')
+    } else {
+        boolean = false
     }
 
-    return
+    return sessionStorage.setItem('isItDarkMode', ''+boolean+'')
 }
 
 const changeMoonIcon = (icon) => {
