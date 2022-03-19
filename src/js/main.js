@@ -72,8 +72,9 @@ searchCountry.addEventListener('input', e => {
 
 // - Request for data when the site is loading
 const load = async () => {
-    darkMode()
-    return await getData()
+    darkMode(checkDarkMode()) 
+
+    return await getData(currBoolean)
         .then(() => {
             sr.reveal('.card', {
                 delay: 0,
@@ -84,6 +85,18 @@ const load = async () => {
                 opacity: 0
             })
         })
+}
+
+const checkDarkMode = () => {
+    const currentMode = sessionStorage.getItem('isItDarkMode')
+    let currBoolean
+    if (currentMode === 'false' || !currentMode) {
+        currBoolean = 'true'
+    } else {
+        currBoolean = 'false'
+    }
+
+    return currBoolean
 }
 
 load()
