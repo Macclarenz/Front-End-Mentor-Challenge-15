@@ -72,6 +72,7 @@ searchCountry.addEventListener('input', e => {
 
 // - Request for data when the site is loading
 const load = async () => {
+    darkMode()
     return await getData()
         .then(() => {
             sr.reveal('.card', {
