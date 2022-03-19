@@ -11,7 +11,7 @@ import {
     darkMode
 } from './darkMode.js'
 
-import ScrollReveal from 'scrollreveal'
+import ScrollReveal from './scrollreveal'
 
 
 const filterCountry = document.querySelector('#filterCountry')
