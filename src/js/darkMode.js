@@ -28,7 +28,8 @@ const initDarkMode = () => {
             changeMoonIcon(regularMoonIcon)
         }
     } finally {
-        return changeColors(isItDarkMode)
+        if (isItDarkMode === undefined || isItDarkMode === null) return changeColors(false)
+        else return changeColors(isItDarkMode)
     }
 }
 
@@ -45,7 +46,7 @@ const changeMoonIcon = (icon) => {
 const changeColors = (bool) => {
     const body = document.body
 
-    if (bool == 'true') {
+    if (bool == true) {
         return body.classList.add('darkMode')
     } else {
         return body.classList.remove('darkMode')
