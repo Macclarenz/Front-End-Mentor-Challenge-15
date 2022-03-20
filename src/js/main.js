@@ -90,7 +90,7 @@ const load = async () => {
 const checkDarkMode = () => {
     const currentMode = sessionStorage.getItem('isItDarkMode')
     let currBoolean
-    if (currentMode === 'false' || !currentMode) {
+    if (currentMode == 'false' || !currentMode) {
         currBoolean = 'true'
     } else {
         currBoolean = 'false'
@@ -102,4 +102,6 @@ const checkDarkMode = () => {
 load()
 
 // - Once trigger, it will invoke darkMode() 
-darkModeButton.addEventListener('click', darkMode)
+darkModeButton.addEventListener('click', () => {
+    darkMode(checkDarkMode())
+})
