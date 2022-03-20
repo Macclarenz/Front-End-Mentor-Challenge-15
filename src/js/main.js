@@ -8,7 +8,8 @@ import {
 } from './generateCards.js'
 
 import {
-    darkMode
+    darkMode,
+    initDarkMode
 } from './darkMode.js'
 
 const filterCountry = document.querySelector('#filterCountry')
@@ -72,8 +73,7 @@ searchCountry.addEventListener('input', e => {
 
 // - Request for data when the site is loading
 const load = async () => {
-    darkMode() 
-
+    initDarkMode()
     return await getData()
         .then(() => {
             sr.reveal('.card', {
