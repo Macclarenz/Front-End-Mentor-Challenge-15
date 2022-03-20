@@ -13,7 +13,7 @@ const darkMode = (currboolean) => {
             changeMoonIcon(regularMoonIcon)
         }
     } finally {
-        changeColors(isItDarkMode)
+        changeColors(currboolean)
     }
 
     return localStorage.setItem('isItDarkMode', currboolean)
