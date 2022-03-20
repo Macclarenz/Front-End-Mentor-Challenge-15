@@ -16,7 +16,7 @@ const darkMode = (currboolean) => {
         changeColors(isItDarkMode)
     }
 
-    return localStorage.setItem('isItDarkMode', boolean)
+    return localStorage.setItem('isItDarkMode', currboolean)
 }
 
 const initDarkMode = () => {
