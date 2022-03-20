@@ -90,7 +90,7 @@ const load = async () => {
 const checkDarkMode = () => {
     const currentMode = localStorage.getItem('isItDarkMode')
     let currBoolean
-    if (currentMode == 'false' || !currentMode) {
+    if (currentMode === 'false' || !currentMode) {
         currBoolean = 'true'
     } else {
         currBoolean = 'false'

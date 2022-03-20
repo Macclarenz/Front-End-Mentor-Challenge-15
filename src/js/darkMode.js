@@ -7,7 +7,7 @@ const darkMode = (currboolean) => {
     const isItDarkMode = localStorage.getItem('isItDarkMode')
 
     try {
-        if (currboolean == true) {
+        if (currboolean === 'true') {
             changeMoonIcon(solidMoonIcon)
         } else {
             changeMoonIcon(regularMoonIcon)
@@ -22,7 +22,7 @@ const darkMode = (currboolean) => {
 const initDarkMode = () => {
     const isItDarkMode = localStorage.getItem('isItDarkMode')
     try {
-        if (isItDarkMode == true) {
+        if (isItDarkMode === 'true') {
             changeMoonIcon(solidMoonIcon)
         } else {
             changeMoonIcon(regularMoonIcon)
@@ -46,7 +46,7 @@ const changeMoonIcon = (icon) => {
 const changeColors = (bool) => {
     const body = document.body
 
-    if (bool == true) {
+    if (bool === 'true') {
         return body.classList.add('darkMode')
     } else {
         return body.classList.remove('darkMode')
